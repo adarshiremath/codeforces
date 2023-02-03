@@ -23,4 +23,5 @@
 
 line = input().strip().split()
 k, n, w = int(line[0]), int(line[1]), int(line[2])
-print((w*(w+1)*k)//2-n)
+val = (w*(w+1)*k)//2-n
+print(val if val>=0 else 0)
