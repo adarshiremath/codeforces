@@ -43,6 +43,7 @@ n = int(input().strip())
 
 a = list(map(int, input().strip().split()))
 
+
 dit = dict()
 for i in a:
 	if i in dit:
@@ -50,9 +51,19 @@ for i in a:
 	else:
 		dit[i] = i
 
-maxk = 0
-maxv = 0
-for key,values in dit.items():
-	if value > maxv:
-		maxk = key
+count = 0
+print(dit)
+while(len(dit)>0):
+	maxk = -1
+	maxv = -1
+	for key,values in dit.items():
+		if values > maxv:
+			maxk = key
+			maxv = values
+	count += maxv
+	dit.pop(maxk)
+	dit.pop(maxk + 1, None)
+	dit.pop(maxk - 1, None)
+	print(dit)
 
+print(count)
