@@ -61,14 +61,12 @@
 T = int(input().strip())
 
 res = []
-for _ in range(T):
-    num = int(input().strip())
-    ans = 0
-    for i in range(1, num+1):
-        if i == 3 or i%3 == 0:
-            ans = i + 1
-        else:
-            ans = i
-    res.append(ans)
+for i in range(1, 1666+1):
+    if i%10 != 3:
+        if i%3 != 0:
+            res.append(i)
 
-for i in res: print(i)
+num = []
+for i in range(T): num.append(int(input().strip()))
+# print(len(res))
+for i in num: print(res[i-1])
