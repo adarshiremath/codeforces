@@ -80,3 +80,26 @@
 
 
 
+T  = int(input().strip())
+
+res = []
+for _ in range(T):
+    n = int(input().strip())
+    a = list(map(int, input().strip().split()))
+    a_test = list(map(lambda x : x%2, a))
+    odd, even = 0, 0
+    miss  = 0
+    for i in range(n):
+        if i%2 != a_test[i]:
+            miss += 1
+        if a_test[i] == 0:
+            even += 1
+        else:
+            odd += 1
+
+    if(odd != even and miss%2 != 0):
+        res.append(-1)
+    else:
+        res.append(miss//2)
+
+for i in res: print(i)
